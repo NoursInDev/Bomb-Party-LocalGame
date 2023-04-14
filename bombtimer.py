@@ -15,4 +15,5 @@ def timer(minimum):
         print(bombtime)
     timing = True
 
-timer(15)
+if __name__=="__main__":
+    timer(15)

@@ -37,6 +37,7 @@ t1 = threading.Thread(timer(minimumTime))
 t1.start()
 
 while timing == False and endTurn == False:
+    
     if checkindico(mot_choisi) == True:         #si mot dans dico
         if alreadywrited(mot_choisi) == False:  #et pas encore écrit
             print('mot correct')
@@ -52,4 +53,3 @@ while timing == False and endTurn == False:
     else:
         print('unless you are modifying the script, this is a bug! please report it to the Spark Team')     #bug report, ne devrais pas arriver
         endTurn = True
-timing = False
