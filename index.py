@@ -58,4 +58,7 @@ while timing == False and endTurn == False:
     else:
         print('unless you are modifying the script, this is a bug! please report it to the Spark Team')     #bug report, ne devrais pas arriver
         endTurn = True
-timing = False
+if timing == True:
+    print("temps écoulé, Ka-Boom")
+elif timing == False:
+    print("wp")
