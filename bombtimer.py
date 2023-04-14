@@ -20,8 +20,8 @@ def timer(minimum):
     while bombtime>0:
         time.sleep(1)
         bombtime -= 1
-        print(bombtime)
+        
     timing = True
 
-if __name__ == "__main__" : 
+if __name__=="__main__":
     timer(15)
