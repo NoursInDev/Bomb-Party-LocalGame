@@ -38,5 +38,11 @@ def alreadywrited(check): #check si mot écrit a déja été écrit
 
     
 def reset_mots_ecrits():    #reset la liste de mots déja ecrit
-    mots_ecrits = ()
-    return mots_ecrits
+    """
+        reset the list of the aldready written's words
+        --------
+        OUTPUT :
+            mots_ecrits : list
+                cleared aldready written's words list 
+    """
+    mots_ecrits = []
