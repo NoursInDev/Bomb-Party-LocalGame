@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 import random
 import unicodedata
 import json
@@ -9,19 +10,18 @@ from alreadywrited import *     #wrote(), alreadywriten(), reset_mots_ecrits()
 from bombtimer import *
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
 #PARAMETRES
-#Temps minimum à la bombe:
+    #Temps minimum à la bombe:
 minimumTime = 5
 
-
+# -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
 # liste_mots = tous les mots entrables
 #              dans le jeu (mots valides)
 with open('alpha1.1.json','r') as fichier_json:
     liste_mots = fichier_json.read()
-
 print("mots dans dico:", len(liste_mots)) # renvois nombre_mots
-
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
@@ -30,6 +30,8 @@ global endTurn
 timing = False
 endTurn = False
 
+
+
 t1 = threading.Thread(target=timer, args=(5,))
 t1.start()
 
@@ -37,9 +39,8 @@ mot_choisi = normalize(input("valeur = "))
 print("verif contenu variable mot_choisi : " + mot_choisi) #verif
 
 t1.join()
-# -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
-
+# -_-_-_-_-
 
 while timing == False and endTurn == False:
     if checkindico(mot_choisi) == True:         #si mot dans dico
@@ -57,4 +58,7 @@ while timing == False and endTurn == False:
     else:
         print('unless you are modifying the script, this is a bug! please report it to the Spark Team')     #bug report, ne devrais pas arriver
         endTurn = True
-timing = False
+if timing == True:
+    print("temps écoulé, Ka-Boom")
+elif timing == False:
+    print("wp")

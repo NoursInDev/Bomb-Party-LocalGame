@@ -20,4 +20,7 @@ def normalize(utilisateur_mot):
     utilisateur_mot = utilisateur_mot.upper()                                                                   #mise en majuscules
     utilisateur_mot = unicodedata.normalize('NFKD', utilisateur_mot).encode('ASCII', 'ignore').decode('ASCII')  #normalise = enleve les caracteres speciaux et accents
     print ("mot choisi : "+ utilisateur_mot)                                                                    #verification du mot choisi
-    return utilisateur_mot                                                                                      #retourne le mot choisi via normalize()
+    return utilisateur_mot                                                                               #retourne le mot choisi via normalize()
+
+if __name__=="__main__":
+        normalize()
