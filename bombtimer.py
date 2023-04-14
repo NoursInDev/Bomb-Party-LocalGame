@@ -14,6 +14,5 @@ def timer(minimum):
         bombtime -= 1
         print(bombtime)
     timing = True
-    
 
 timer(15)
