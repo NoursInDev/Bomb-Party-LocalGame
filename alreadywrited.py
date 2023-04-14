@@ -5,9 +5,15 @@ import json
 mots_ecrits = []
 def wrote(add):
     """
-            Fonction wrote(add) : ajoute suite de caractère entrée dans une liste
-            ENTREE : ADD = Mot Entré
-            SORTIE : LISTE (contiens tous les mots écrits jusqu'à présent)
+        add the word in the "mots_ecrits" list
+        -------
+        INPUT : 
+            add : str
+                word to add
+        --------
+        OUTPUT :
+            mots_ecrits : list
+                list of all of the words already written 
     """
     #ajouter un mot écrit à la liste des mots écrits
     mots_ecrits.append(add)
@@ -16,9 +22,14 @@ def wrote(add):
 
 def alreadywrited(check): #check si mot écrit a déja été écrit 
     """
-            Fonction mot déja écrit ?
-            ENTREE : Mot
-            SORTIE : True/False
+            check if the word have already been written and return True if it is and False else
+            -------
+            INPUT : 
+                check : str
+                    word to check
+            --------
+            OUTPUT : 
+                boolean
     """
     if check in mots_ecrits:    #demande si mot écrit est dans mots_ecrits ( remplie par fonction wrote() )
         return True
