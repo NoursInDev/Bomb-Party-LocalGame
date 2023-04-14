@@ -10,6 +10,7 @@ from alreadywrited import *     #wrote(), alreadywriten(), reset_mots_ecrits()
 from bombtimer import *
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
 #PARAMETRES
     #Temps minimum à la bombe:
 minimumTime = 5
@@ -20,9 +21,7 @@ minimumTime = 5
 #              dans le jeu (mots valides)
 with open('alpha1.1.json','r') as fichier_json:
     liste_mots = fichier_json.read()
-
 print("mots dans dico:", len(liste_mots)) # renvois nombre_mots
-
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
@@ -31,6 +30,8 @@ global endTurn
 timing = False
 endTurn = False
 
+
+
 t1 = threading.Thread(target=timer, args=(5,))
 t1.start()
 
@@ -38,9 +39,8 @@ mot_choisi = normalize(input("valeur = "))
 print("verif contenu variable mot_choisi : " + mot_choisi) #verif
 
 t1.join()
-# -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
-
+# -_-_-_-_-
 
 while timing == False and endTurn == False:
     if checkindico(mot_choisi) == True:         #si mot dans dico
