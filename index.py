@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 import random
 import unicodedata
 import json
@@ -10,10 +11,10 @@ from bombtimer import *
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 #PARAMETRES
-#Temps minimum à la bombe:
+    #Temps minimum à la bombe:
 minimumTime = 5
 
-
+# -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
 # liste_mots = tous les mots entrables
 #              dans le jeu (mots valides)
