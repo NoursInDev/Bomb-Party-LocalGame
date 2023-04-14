@@ -12,7 +12,7 @@ from bombtimer import *
 #PARAMETRES
 #Temps minimum à la bombe:
 minimumTime = 5
-maximumTime = 78
+
 
 
 # liste_mots = tous les mots entrables
@@ -33,11 +33,8 @@ global timing
 global endTurn
 timing = False
 endTurn = False
-t1 = threading.Thread(timer(minimumTime))
-t1.start()
 
 while timing == False and endTurn == False:
-    
     if checkindico(mot_choisi) == True:         #si mot dans dico
         if alreadywrited(mot_choisi) == False:  #et pas encore écrit
             print('mot correct')
@@ -53,3 +50,4 @@ while timing == False and endTurn == False:
     else:
         print('unless you are modifying the script, this is a bug! please report it to the Spark Team')     #bug report, ne devrais pas arriver
         endTurn = True
+timing = False
