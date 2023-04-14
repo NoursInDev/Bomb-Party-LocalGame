@@ -16,8 +16,8 @@ liste_alpha = json.loads(contenu_json)      #entrer dans liste_alpha les caracte
 def checkindico(check):        #fonction check si mot choisi est dans la liste
     """
             Fonction Mot dans Dico ?
-            ENTREE : Mot
-            SORTIE : True/False (boolean)
+            INPUT : Mot
+            OUTPUT : True/False (boolean)
     """
     if check in liste_mots:     #verifie si mot écrit est dans le dictionnaire des mots
         return True
