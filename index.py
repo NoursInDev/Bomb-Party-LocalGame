@@ -15,14 +15,6 @@ minimumTime = 5
 maximumTime = 78
 
 
-
-
-
-
-
-
-
-
 # liste_mots = tous les mots entrables
 #              dans le jeu (mots valides)
 with open('alpha1.1.json','r') as fichier_json:
