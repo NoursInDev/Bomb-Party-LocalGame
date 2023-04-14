@@ -18,6 +18,7 @@ def checkindico(check):        #fonction check si mot choisi est dans la liste
             Fonction Mot dans Dico ?
             INPUT : Mot
             OUTPUT : True/False (boolean)
+            
     """
     if check in liste_mots:     #verifie si mot écrit est dans le dictionnaire des mots
         return True
