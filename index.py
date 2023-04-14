@@ -33,7 +33,7 @@ endTurn = False
 t1 = threading.Thread(target=timer, args=(5,))
 t1.start()
 
-mot_choisi = normalize()
+mot_choisi = normalize(input("valeur = "))
 print("verif contenu variable mot_choisi : " + mot_choisi) #verif
 
 t1.join()
