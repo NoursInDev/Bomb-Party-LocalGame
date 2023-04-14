@@ -12,7 +12,7 @@ from bombtimer import *
 #PARAMETRES
 #Temps minimum à la bombe:
 minimumTime = 5
-
+maximumTime = 78
 
 
 # liste_mots = tous les mots entrables
