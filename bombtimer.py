@@ -16,6 +16,7 @@ def timer(minimum):
             minimum : int
                 the minimum of time what will be definded in the countdown 
     """
+    timing = False
     bombtime = minimum + random.randint(0,7)    #définition du temps de la bombe
     while bombtime>0:
         time.sleep(1)
