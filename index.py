@@ -13,7 +13,7 @@ from bombtimer import *
 
 #PARAMETRES
     #Temps minimum à la bombe:
-minimumTime = 1
+minimumTime = 5
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
@@ -25,40 +25,39 @@ print("mots dans dico:", len(liste_mots)) # renvois nombre_mots
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
-global timing
 global endTurn
-timing = False
+
 endTurn = False
 
 
 
-t1 = threading.Thread(target=timer, args=(5,))
-t1.start()
-
-mot_choisi = normalize(input("valeur = "))
-print("verif contenu variable mot_choisi : " + mot_choisi) #verif
-
-t1.join()
 
 # -_-_-_-_-
+timing = False
+t1 = threading.Timer(random.randint(minimumTime, minimumTime+7),set_timing_true)
+t1.start()
 
-while timing == False and endTurn == False:
+
+while timing == False:
+    mot_choisi = normalize(input("valeur = "))
+    print("verif contenu variable mot_choisi : " + mot_choisi) #verif
     if checkindico(mot_choisi) == True:         #si mot dans dico
         if alreadywrited(mot_choisi) == False:  #et pas encore écrit
             print('mot correct')
             wrote(mot_choisi)
             endTurn = True
+            break
         elif alreadywrited(mot_choisi) == True: #mais déja écrit
             print('mot déja écrit!')
         else:
             print('unless you are modifying the script, this is a bug! please report it to the spark team') #bug report, ne devrais pas arriver
             endTurn = True
+            break
     elif checkindico(mot_choisi) == False:
         print("mot non existant dans la base de donnée actuellement")           #mot qui n'est pas dans le dictionnaire =>> à créer : fonction stocker mots faux pour les rajouter ensuite dans dico
     else:
         print('unless you are modifying the script, this is a bug! please report it to the Spark Team')     #bug report, ne devrais pas arriver
         endTurn = True
-if timing == True:
-    print("temps écoulé, Ka-Boom")
-elif timing == False:
-    print("wp")
+        break
+    pass
+print("compteur toujours en cours ? | ",t1.is_alive())
