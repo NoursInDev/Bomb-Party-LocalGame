@@ -7,21 +7,17 @@ import time
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
-def timer(minimum):
-    """
-        DESCRIPTION : 
-            create and execute a countdown which have minimum of the minimum's variable and which is randomly increased for 0 to 7 seconds.
-        --------
-        INPUTS :  
-            minimum : int
-                the minimum of time what will be definded in the countdown 
-    """
-    bombtime = minimum + random.randint(0,7)    #définition du temps de la bombe
-    while bombtime>0:
-        time.sleep(1)
-        bombtime -= 1
-        
+    
+def compte_a_rebours(min):
+    global timing
+    bombTime = random.randint(min, min+7)
+    time.sleep(bombTime)
+    set_timing_true()
+    
+def set_timing_true():
+    global timing
     timing = True
+    print("timing terminé ? | ",timing)
 
 if __name__=="__main__":
-    timer(15)
+    compte_a_rebours(5)
