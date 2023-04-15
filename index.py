@@ -13,7 +13,7 @@ from bombtimer import *
 
 #PARAMETRES
     #Temps minimum à la bombe:
-minimumTime = 5
+minimumTime = 1
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
