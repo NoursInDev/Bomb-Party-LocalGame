@@ -8,6 +8,7 @@ from normalize import *         #normalize()
 from checkindico import *       #checkindico() 
 from alreadywrited import *     #wrote(), alreadywriten(), reset_mots_ecrits()
 from bombtimer import *
+import socket
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
