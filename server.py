@@ -4,25 +4,24 @@ import random
 import unicodedata
 import json
 import threading
-from normalize import *         #normalize()
-from checkindico import *       #checkindico() 
-from alreadywrited import *     #wrote(), alreadywriten(), reset_mots_ecrits()
-from bombtimer import *
+from normalize import *         #import normalize()
+from checkindico import *       #import checkindico() 
+from alreadywrited import *     #import wrote(), alreadywriten() and reset_mots_ecrits()
+from bombtimer import *         
 import socket
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
-#PARAMETRES
-    #Temps minimum à la bombe:
+#parameters
+    #minimum bomb's time:
 minimumTime = 5
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
-# liste_mots = tous les mots entrables
-#              dans le jeu (mots valides)
+# liste_mots = all the valid words (dictionnary) in the game
 with open('alpha1.1.json','r') as fichier_json:
     liste_mots = fichier_json.read()
-print("mots dans dico:", len(liste_mots)) # renvois nombre_mots
+print("mots dans dico:", len(liste_mots)) # returns the number of words in the dictionary
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
