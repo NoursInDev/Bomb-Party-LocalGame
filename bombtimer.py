@@ -20,7 +20,6 @@ def compte_a_rebours(min):      #timer bombe
         none 
     """
     global timing
-    timing = True
     for i in range(random.randint(min, min+7), 0, -1):      
         print(i)                                            #verif compte a rebours
         if timing == False:                                 #sensé arreter la fonction à timing == False
