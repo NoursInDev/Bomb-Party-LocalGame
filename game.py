@@ -10,5 +10,3 @@ from alreadywrited import *     #wrote(), alreadywriten(), reset_mots_ecrits()
 from bombtimer import *
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
-
-#PARAMETRES
