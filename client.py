@@ -10,3 +10,4 @@ user_input = StringVar(fenetre,)
 entry_one=Entry(fenetre, textvariable=user_input)
 entry_one.grid(row=3,column=0,padx=10)
 fenetre.mainloop()
+ip=entry_one.
