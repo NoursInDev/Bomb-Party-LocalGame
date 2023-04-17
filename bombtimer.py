@@ -8,16 +8,17 @@ import time
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
     
-def compte_a_rebours(min):
-    global timing
-    bombTime = random.randint(min, min+7)
-    time.sleep(bombTime)
-    set_timing_true()
-    
-def set_timing_true():
+def compte_a_rebours(min):      #timer bombe
     global timing
     timing = True
-    print("timing terminé ? | ",timing)
-
+    for i in range(random.randint(min, min+7), 0, -1):      
+        print(i)                                            #verif compte a rebours
+        if timing == False:                                 #sensé arreter la fonction à timing == False
+            break
+        time.sleep(1)
+    if timing == True:
+        print("temps écoulé, Ka-Boom")
+        print('etat de timing :', timing)
+        
 if __name__=="__main__":
     compte_a_rebours(5)
