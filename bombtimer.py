@@ -9,6 +9,16 @@ import time
 
     
 def compte_a_rebours(min):      #timer bombe
+    """
+    countdown of the bomb
+    -------
+    INPUT :
+        min : int
+            the minimum time at the start of the countdown
+    --------
+    OUTPUT :
+        none 
+    """
     global timing
     timing = True
     for i in range(random.randint(min, min+7), 0, -1):      
