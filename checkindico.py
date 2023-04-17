@@ -13,7 +13,7 @@ with open('alpha1.1.json','r') as fichier_json:
 
 liste_alpha = json.loads(contenu_json)      #entrer dans liste_alpha les caracteres autorisés
 
-def checkindico(check):        #fonction check si mot choisi est dans la liste
+def checkindico(check):
     """
             check if the word is in the dictionnary and retun true if this word is in it and False if not
             -------
@@ -24,7 +24,7 @@ def checkindico(check):        #fonction check si mot choisi est dans la liste
             OUTPUT :
                 boolean
     """
-    if check in liste_mots:     #verifie si mot écrit est dans le dictionnaire des mots
+    if check in liste_mots:     #check if the word is in the dictionnary
         return True
     else:
         return False

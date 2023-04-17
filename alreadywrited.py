@@ -15,12 +15,11 @@ def wrote(add):
             mots_ecrits : list
                 list of all of the words already written 
     """
-    #ajouter un mot écrit à la liste des mots écrits
-    mots_ecrits.append(add)
-    print(mots_ecrits)      #verification de la liste actuelle
+    mots_ecrits.append(add) #add the word in the "mots_ecrits" list
+    print(mots_ecrits)      #print the already written words' list for a manual check
     return mots_ecrits
 
-def alreadywrited(check): #check si mot écrit a déja été écrit 
+def alreadywrited(check):
     """
             check if the word have already been written and return True if it is and False else
             -------
@@ -31,13 +30,13 @@ def alreadywrited(check): #check si mot écrit a déja été écrit
             OUTPUT : 
                 boolean
     """
-    if check in mots_ecrits:    #demande si mot écrit est dans mots_ecrits ( remplie par fonction wrote() )
+    if check in mots_ecrits:    #check if the word is in the mots_ecrits' list ( filled by the wrote() function )
         return True
     else:
         return False
 
     
-def reset_mots_ecrits():    #reset la liste de mots déja ecrit
+def reset_mots_ecrits():
     """
         reset the list of the aldready written's words
         --------

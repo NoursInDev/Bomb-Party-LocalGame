@@ -19,7 +19,7 @@ for mot in mots:
     if est_valide:
         mots_filtres.append(mot)
 
-# Écriture des mots filtrés dans le fichier JSON
+# Writing filtered words to JSON file
 with open('alpha1.1.json', 'w') as f:
     json.dump(mots_filtres, f)
 
