@@ -15,7 +15,7 @@ from bombtimer import *                                                         
 with open('alpha1.1.json','r') as fichier_json:
     liste_mots = fichier_json.read()
 print("mots dans dico:", len(liste_mots))                                               # returns the number of words in the dictionary
-mots_verif = open("mots_a_verif.exe", "a")
+mots_verif = open("mots_a_verif.txt", "a")
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
