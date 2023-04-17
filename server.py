@@ -29,9 +29,10 @@ global endTurn
 endTurn = False
 
 # -_-_-_-_-
+mots_a_verif = open("mots_a_verif.txt","a")
 timing = False
-t1 = threading.Thread(target=compte_a_rebours, args=(1,))
-t1.start()
+#t1 = threading.Thread(target=compte_a_rebours, args=(1,))
+#t1.start()
 
 
 while timing == False and endTurn == False:
@@ -54,7 +55,8 @@ while timing == False and endTurn == False:
                 endTurn = True
                 break
         elif checkindico(mot_choisi) == False:      #if the choosed word isn't in the dictionnary
-            print("mot non existant dans la base de donnée actuellement")           #mot qui n'est pas dans le dictionnaire =>> à créer : fonction stocker mots faux pour les rajouter ensuite dans dico
+            print("mot non existant dans la base de donnée actuellement")
+            mots_a_verif.write(mot_choisi + ", ")
         else:
             print('unless you are modifying the script, this is a bug! please report it to the Spark Team')     #bug report, should not happen
             endTurn = True
