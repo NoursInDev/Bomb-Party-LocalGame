@@ -28,6 +28,7 @@ def countdown(min):
     print(temps)
     while endTurn==False and temps>0 : 
         temps -= 1
+        time.sleep(1)
     if endTurn==False : 
         print("Kaboom, Time-up!")
         timing=True

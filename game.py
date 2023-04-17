@@ -26,7 +26,7 @@ endTurn = False
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
-t1 = threading.Thread(target=countdown, args=(minimumTime),)
+t1 = threading.Thread(target=countdown, args=(minimumTime,))
 
 print('[console] début du tour')
 
@@ -41,9 +41,17 @@ while timing != True and endTurn != True:
         endTurn = True
         print('tour terminé par explosion de bombe')
         break
-    else:
+    elif timing != True:
+        print(timing)
         if checkindico(mot_choisi) == True:
-            pass
+            if alreadywrited(mot_choisi) == False:
+                print('mot correct et non écrit actuellement')
+                wrote(mot_choisi)
+                endTurn = True
+                break
+            else:
+                print('mot déja écrit!')
         else:
             print("ce mot n'est pas dans la base de données actuellement !")
-            
+    else:
+        print('bug')
