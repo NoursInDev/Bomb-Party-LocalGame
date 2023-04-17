@@ -18,7 +18,7 @@ print("mots dans dico:", len(liste_mots)) # returns the number of words in the d
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
-minimumTime = 5
+minimumTime = 1
 
 timing = False
 
@@ -33,6 +33,7 @@ print('[console] début du tour')
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
 t1.start()
+
 
 while timing != True and endTurn != True:
     mot_choisi = normalize(input("valeur = "))
