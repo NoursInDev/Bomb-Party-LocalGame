@@ -25,9 +25,9 @@ gameDifficulty = 500    #1 = min 1 word/syllable in data base
 timing = False
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
-def gameTurn(wordbysyllable):                                                                   #GAME TURN FUNCTION -> BASIC FUNCTION OF ALL THE GAME
+def gameTurn(wordbysyllable,timer):                                                                   #GAME TURN FUNCTION -> BASIC FUNCTION OF ALL THE GAME
     endTurn = False
-    bombTimer = random.randint(minimumTime, minimumTime+7)                                          #Duration generation
+    bombTimer = random.randint(timer, timer+7)                                          #Duration generation
     t1 = threading.Timer(bombTimer, lambda: print('timing bomb initial : ', bombTimer))             #Set Timer in a thread
 
     print('[console] début du tour')                                                                #Console MSG
@@ -71,4 +71,4 @@ def gameTurn(wordbysyllable):                                                   
     mots_ecrits = []
     
 if __name__ == '__main__':
-    gameTurn(gameDifficulty)
+    gameTurn(gameDifficulty, minimumTime)
