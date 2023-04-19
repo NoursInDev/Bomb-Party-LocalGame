@@ -12,22 +12,21 @@ from multiprocessing import Value
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
 # liste_mots = all the valid words (dictionnary) in the game
-with open('alpha1.2.json','r') as fichier_json:
-    liste_mots = fichier_json.read()
+with open('dictionary/alpha1.2.json','r') as fichier_json:
+    liste_mots = json.load(fichier_json)
 print("mots dans dico:", len(liste_mots))                                               # returns the number of words in the dictionary
 mots_verif = open("mots_a_verif.txt", "a")
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
-minimumTime = 3         #variable declaration
+minimumTime = 5         #variable declaration
 gameDifficulty = 500    #1 = min 1 word/syllable in data base
 
 timing = False
 
-endTurn = False
-
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 def gameTurn(wordbysyllable):                                                                   #GAME TURN FUNCTION -> BASIC FUNCTION OF ALL THE GAME
+    endTurn = False
     bombTimer = random.randint(minimumTime, minimumTime+7)                                          #Duration generation
     t1 = threading.Timer(bombTimer, lambda: print('timing bomb initial : ', bombTimer))             #Set Timer in a thread
 
@@ -50,7 +49,7 @@ def gameTurn(wordbysyllable):                                                   
             print('tour terminé par explosion de bombe')
         elif t1.is_alive() == True:                                                             #recheck if the countdown is over (just in case(we're never sure of anything))
             if random_syllabe in mot_choisi:                                                    #check if the syllable is contained in the chosen word
-                if checkindico(mot_choisi) == True:                                             #check if the choosed word is in the dictionary
+                if checkindico(mot_choisi, liste_mots) == True:                                             #check if the choosed word is in the dictionary
                     if alreadywrited(mot_choisi) == False:                                      #check if the choosed word was already written
                         print('mot correct et non écrit actuellement')
                         wrote(mot_choisi)
@@ -70,3 +69,6 @@ def gameTurn(wordbysyllable):                                                   
     t1.join()
     print('verif : etat thread timer: ',t1.is_alive())
     mots_ecrits = []
+    
+if __name__ == '__main__':
+    gameTurn(gameDifficulty)
