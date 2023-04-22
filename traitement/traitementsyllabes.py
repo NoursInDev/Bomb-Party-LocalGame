@@ -1,7 +1,7 @@
 import json
 from collections import Counter
 
-with open("alpha1.1.json", "r") as f:
+with open("../dictionary/alpha1.1.json", "r") as f:
     words = json.load(f)
 
 letters_2 = Counter()
@@ -21,5 +21,5 @@ for key, value in letters_3.items():
     if value >= 100:
         syllables[key] = value
 
-with open("syllabes.json", "w") as f:
+with open("../dictionary/syllabes.json", "w") as f:
     json.dump(syllables, f)

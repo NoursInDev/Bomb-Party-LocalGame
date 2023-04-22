@@ -3,7 +3,7 @@ import json
 
 lettres = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
-with open('alpha1.2.json','r') as fichier_json:
+with open('../dictionary/alpha1.2.json','r') as fichier_json:
     contenu = fichier_json.read()
 
 mots = []
@@ -20,7 +20,7 @@ for mot in mots:
         mots_filtres.append(mot)
 
 # Writing filtered words to JSON file
-with open('alpha1.1.json', 'w') as f:
+with open('../dictionary/alpha1.1.json', 'w') as f:
     json.dump(mots_filtres, f)
 
 print("Les mots filtrés ont été écrits dans le fichier trimoinscaracteres.json")
