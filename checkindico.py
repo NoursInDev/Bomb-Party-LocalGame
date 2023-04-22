@@ -15,7 +15,7 @@ def checkindico(check, wordList):
             OUTPUT :
                 boolean
     """
-    if check in wordList:     #check if the word is in the dictionnary
+    if check in wordList:
         return True
     else:
         return False

@@ -30,7 +30,7 @@ def alreadywrited(check):
             OUTPUT : 
                 boolean
     """
-    if check in mots_ecrits:    #check if the word is in the mots_ecrits' list ( filled by the wrote() function )
+    if check in mots_ecrits:
         return True
     else:
         return False
