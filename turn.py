@@ -32,7 +32,7 @@ def gameTurn(wordbysyllable,timer):                                             
 
     print('[console] début du tour')                                                                #Console MSG
     
-    with open('syllabes.json') as f:                                                                #Definition of the syllable
+    with open('dictionary/syllabes.json') as f:                                                                #Definition of the syllable
         data = json.load(f)                                                                             #By opening the file
     syllabe_list = [syllabe for syllabe, count in data.items() if count >= wordbysyllable]              #And selecting a random syllable with more or as many words per syllable as wordinsyllable
     random_syllabe = random.choice(syllabe_list)
